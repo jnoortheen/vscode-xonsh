@@ -54,11 +54,11 @@
       {
         "language": "xonsh",
         "scopeName": "source.xonsh",
-        "path": "./dist/syntaxes/xonsh.tmLanguage.json"
+        "path": "./dist/tmlang/xonsh.json"
       },
       {
         "scopeName": "markdown.xonsh.codeblock",
-        "path": "./dist/syntaxes/injection.json",
+        "path": "./dist/tmlang/injection.json",
         "injectTo": [
           "text.html.markdown"
         ],
@@ -85,16 +85,20 @@
     "js-yaml": "^3.14.0",
     "prettier": "^2.0.0",
     "standard-version": "^9.0",
+    "syntaxdev": "^0.1.3",
     "typescript": "^4.0.3",
     "vsce": "^1.81.0",
-    "vscode": "^1.1.25"
+    "vscode": "^1.1.25",
+    "watch": "^1.0.2"
   },
   "scripts": {
-    "prebuild": "js-yaml src/syntaxes/xonsh.syntax.yaml > dist/syntaxes/xonsh.tmLanguage.json && js-yaml src/syntaxes/injection.yml > dist/syntaxes/injection.json",
+    "prebuild": "syntaxdev build-cson --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.cson && cson2json dist/tmlang/xonsh.cson > dist/tmlang/xonsh.json && js-yaml src/tmlang/injection.yml > dist/tmlang/injection.json",
     "build": "tsc -p ./",
     "watch": "yarn build --watch",
+    "watch:syntax": "watch 'yarn prebuild' ./src/tmlang",
     "postinstall": "node ./node_modules/vscode/bin/install && husky install",
     "release": "yarn build && standard-version && git push --follow-tags && vsce publish",
-    "lint": "eslint --ext ts src"
+    "lint": "eslint --ext ts src",
+    "test:syntax": "syntaxdev test --tests test/**/*.xsh --syntax src/tmlang/xonsh.syntax.yaml"
   }
 }

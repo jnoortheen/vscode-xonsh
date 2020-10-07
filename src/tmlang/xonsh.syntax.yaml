@@ -1,11 +1,9 @@
 ---
-name: MagicPython
-scopeName: source.python
+name: Xonsh
+scopeName: source.xonsh
 # NOTE: remember to update package.json with VSCode file types.
-fileTypes: [py, py3, rpy, pyw, cpy, pyi,
-            SConstruct, Sconstruct, sconstruct, SConscript,
-            gyp, gypi, wsgi, kv, Snakefile, smk, tac]
-firstLineMatch: ^#![ \t]*/.*\bpython[\d\.]*\b
+fileTypes: [xsh, xonshrc]
+firstLineMatch: ^#![ \t]*/.*\bxonsh[\d\.]*\b
 uuid: 742deb57-6e38-4192-bed6-410746efd85d
 
 patterns:
