@@ -99,6 +99,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install && husky install",
     "release": "yarn build && standard-version && git push --follow-tags && vsce publish",
     "lint": "eslint --ext ts src",
-    "test:syntax": "syntaxdev test --tests test/**/*.xsh --syntax src/tmlang/xonsh.syntax.yaml"
+    "test:synt": "syntaxdev test --syntax src/tmlang/xonsh.syntax.yaml --tests",
+    "test:syntax": "yarn test:synt tests/**/*.xsh"
   }
 }
