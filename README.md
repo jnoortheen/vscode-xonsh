@@ -28,13 +28,6 @@ It trieds to modify the default VSCode's [Python extension](https://github.com/m
 
 Hit `F1` and enter the `ext install jnoortheen.xonsh` command or search for `xonsh` .
 
-### Installing the extension Locally
-
-Just clone the [GitHub repository](https://github.com/jnoortheen/xonsh-vscode-ext) under your local extensions folder:
-
-* Windows: `%USERPROFILE%\.vscode\extensions`
-* Mac / Linux: `$HOME/.vscode/extensions`
-
 ## Contributing
 
 I have created this extension since there were none to support Xonsh. It is a superset of Python but has breaking syntax definition. So setting language mode as Python will list Syntax errors. This is just a start, adding basic syntax highlight. PRs are welcome. If we can add features from the Python extension it is great editor as well. Our aim is to make the `Python extension` support `xonsh` as well. It will happen only when it becomes popular enough.
@@ -52,6 +45,7 @@ I have created this extension since there were none to support Xonsh. It is a su
   yarn build # this will build the extension
 ```
 
+* check [Extension Quickstart](./vsc-extension-quickstart.md)
 * husky is used for git hooks
 
 ---
