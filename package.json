@@ -1,5 +1,5 @@
 {
-  "name": "xonsh-ide",
+  "name": "xonsh",
   "displayName": "Xonsh IDE",
   "description": "Xonsh language support.",
   "version": "0.0.1",
@@ -27,7 +27,7 @@
     "type": "git",
     "url": "https://github.com/jnoortheen/xonsh-vscode-ext"
   },
-  "main": "dist/extension.js",
+  "main": "dist/index.js",
   "activationEvents": [
     "onLanguage:xonsh"
   ],
@@ -42,6 +42,11 @@
         "extensions": [
           ".xsh"
         ],
+        "filenames": [
+          ".xonshrc",
+          "xonshrc"
+        ],
+        "firstLine": "^#!\\s*/?.*\\bxonsh[0-9.-]*\\b",
         "configuration": "./language-configuration.json"
       }
     ],
@@ -49,11 +54,11 @@
       {
         "language": "xonsh",
         "scopeName": "source.xonsh",
-        "path": "./syntaxes/xonsh.tmLanguage.json"
+        "path": "./dist/syntaxes/xonsh.tmLanguage.json"
       },
       {
         "scopeName": "markdown.xonsh.codeblock",
-        "path": "./syntaxes/injection.json",
+        "path": "./dist/syntaxes/injection.json",
         "injectTo": [
           "text.html.markdown"
         ],
@@ -85,7 +90,7 @@
     "vscode": "^1.1.25"
   },
   "scripts": {
-    "prebuild": "js-yaml syntaxes/nix.YAML-tmLanguage > syntaxes/nix.tmLanguage.json && js-yaml syntaxes/injection.yml > syntaxes/injection.json",
+    "prebuild": "js-yaml src/syntaxes/xonsh.syntax.yaml > dist/syntaxes/xonsh.tmLanguage.json && js-yaml src/syntaxes/injection.yml > dist/syntaxes/injection.json",
     "build": "tsc -p ./",
     "watch": "yarn build --watch",
     "postinstall": "node ./node_modules/vscode/bin/install && husky install",
