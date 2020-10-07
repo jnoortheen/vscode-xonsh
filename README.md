@@ -15,7 +15,7 @@ It trieds to modify the default VSCode's [Python extension](https://github.com/m
 **PRs welcome** for them
 
 * at this point it doesn't do anything special than `MagicPython` with `language-configuration.json`
-  + [ ] add subprocess mode lines support
+  + [ ] add subprocess mode lines support - https://macromates.com/manual/en/regular_expressions
   + [ ] add $variable support
   + [ ] add macros syntax support
   + [ ] path string support
