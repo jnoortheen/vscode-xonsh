@@ -8,15 +8,17 @@ It trieds to modify the default VSCode's [Python extension](https://github.com/m
 
   + the tmLanguage file from [MagicPython](https://github.com/MagicStack/MagicPython/blob/master/grammars/src/MagicPython.syntax.yaml) extension is used.
 
-  # todo - add image - syntax highlight support
-
   + code snippets inside `markdown` files also work.
-
-  # todo - add markdown support snippet
 
 ## Todos
 
 **PRs welcome** for them
+
+* at this point it doesn't do anything special than `MagicPython` with `language-configuration.json`
+  -[ ] add subprocess mode lines support
+  -[ ] add $variable support
+  -[ ] add macros syntax support
+  -[ ] path string support
 
 * auto-formatter support
 * code-completion support
