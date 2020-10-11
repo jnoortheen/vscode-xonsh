@@ -1373,6 +1373,13 @@ repository:
               | execfile | long | xrange
             )\b
 
+      - name: support.function.builtin.xonsh
+        match: |
+          (?x)
+            (?<!\.) \b(
+              abbrevs | aliases | compilex | execx | evalx | events | print_color | exit | printx
+            )\b
+
   builtin-types:
     name: support.type.python
     match: |
