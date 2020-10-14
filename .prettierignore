@@ -1,0 +1,22 @@
+# Ignore artifacts:
+build
+dist
+coverage
+
+# file types to ignore
+*.yaml
+*.yml
+*.md
+
+#  lib
+node_modules
+**/*.spec.ts
+
+# ignored folders
+.github/
+.husky/
+.idea/
+.ionide/
+.local/
+.vscode/
+images/

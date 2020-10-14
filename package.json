@@ -70,6 +70,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -84,6 +85,7 @@
     "husky": "^5.0.0-alpha.6",
     "js-yaml": "^3.14.0",
     "prettier": "^2.0.0",
+    "pretty-quick": "^3.1.0",
     "standard-version": "^9.0",
     "syntaxdev": "^0.1.3",
     "typescript": "^4.0.3",
@@ -92,6 +94,7 @@
     "watch": "^1.0.2"
   },
   "scripts": {
+    "fmt": "prettier --write src",
     "prebuild": "syntaxdev build-cson --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.cson && cson2json dist/tmlang/xonsh.cson > dist/tmlang/xonsh.json && js-yaml src/tmlang/injection.yml > dist/tmlang/injection.json",
     "build": "tsc -p ./",
     "watch": "yarn build --watch",
