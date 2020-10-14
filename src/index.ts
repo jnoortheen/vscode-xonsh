@@ -3,24 +3,46 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ExtensionContext, languages, IndentAction } from 'vscode'
+import {
+    Disposable,
+    ExtensionContext,
+    IndentAction,
+    languages,
+    workspace,
+} from 'vscode'
 
-import { workspace, Disposable, ExtensionContext } from 'vscode'
 import {
     LanguageClient,
     LanguageClientOptions,
-    SettingMonitor,
     ServerOptions,
-    ErrorAction,
-    ErrorHandler,
-    CloseAction,
-    TransportKind,
 } from 'vscode-languageclient'
 
-export function activate(ctx: ExtensionContext): any {
+function startLangServer(
+    command: string,
+    args: string[],
+    documentSelector: string[]
+): Disposable {
+    const serverOptions: ServerOptions = {
+        command,
+        args,
+    }
+    const clientOptions: LanguageClientOptions = {
+        documentSelector: documentSelector,
+        synchronize: {
+            configurationSection: 'pyls',
+        },
+    }
+    return new LanguageClient(command, serverOptions, clientOptions).start()
+}
+
+export function activate(ctx: ExtensionContext): void {
     const executable = workspace
         .getConfiguration('pyls')
         .get<string>('executable')
+
+    if (executable) {
+        ctx.subscriptions.push(startLangServer(executable, ['-vv'], ['python']))
+    }
 
     languages.setLanguageConfiguration('python', {
         onEnterRules: [
