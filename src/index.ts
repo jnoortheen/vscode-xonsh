@@ -4,52 +4,57 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {
-    Disposable,
-    ExtensionContext,
-    IndentAction,
-    languages,
-    workspace,
-} from 'vscode'
+  env,
+  ExtensionContext,
+  IndentAction,
+  languages,
+  Uri,
+  window,
+  workspace,
+} from 'vscode';
+import * as client from './client';
+import { which } from './which';
+import { UriMessageItem } from './models';
 
-import {
-    LanguageClient,
-    LanguageClientOptions,
-    ServerOptions,
-} from 'vscode-languageclient'
-
-function startLangServer(
-    command: string,
-    args: string[],
-    documentSelector: string[]
-): Disposable {
-    const serverOptions: ServerOptions = {
-        command,
-        args,
+function getExePath(): string | undefined {
+  const executable = workspace
+    .getConfiguration('xonsh')
+    .get<string>('executable');
+  if (executable) {
+    return which(executable);
+  }
+}
+async function checkServerInstalled(): Promise<string | undefined> {
+  const executable = getExePath();
+  if (executable === undefined || executable === '') {
+    const selection = await window.showErrorMessage<UriMessageItem>(
+      'Unable to find Python language server',
+      {
+        title: 'Install language server',
+        uri: Uri.parse('https://github.com/palantir/python-language-server'),
+      }
+    );
+    if (selection?.uri !== undefined) {
+      await env.openExternal(selection?.uri);
+      return;
     }
-    const clientOptions: LanguageClientOptions = {
-        documentSelector: documentSelector,
-        synchronize: {
-            configurationSection: 'pyls',
-        },
-    }
-    return new LanguageClient(command, serverOptions, clientOptions).start()
+  }
+  return executable;
 }
 
-export function activate(ctx: ExtensionContext): void {
-    const executable = workspace
-        .getConfiguration('pyls')
-        .get<string>('executable')
+export async function activate(ctx: ExtensionContext): Promise<void> {
+  const executable = await checkServerInstalled();
 
-    if (executable) {
-        ctx.subscriptions.push(startLangServer(executable, ['-vv'], ['python']))
-    }
+  if (executable) {
+    ctx.subscriptions.push(client.activate(executable));
+  }
 
-    languages.setLanguageConfiguration('python', {
-        onEnterRules: [
-            {
-                beforeText: /^\s*(?:def|class|for|if|elif|else|while|try|with|finally|except|async).*?:\s*$/,
-                action: { indentAction: IndentAction.Indent },
-            },
-        ],
-    })
+  languages.setLanguageConfiguration('xonsh', {
+    onEnterRules: [
+      {
+        beforeText: /^\s*(?:def|class|for|if|elif|else|while|try|with|finally|except|async).*?:\s*$/,
+        action: { indentAction: IndentAction.Indent },
+      },
+    ],
+  });
 }
