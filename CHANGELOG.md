@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.0.2...v0.1.1) (2020-10-17)
+
+
+### Features
+
+* add pyls for IDE features ([98682d8](https://github.com/jnoortheen/xonsh-vscode-ext/commit/98682d86351e2eb333492cf316b94b29a52bef87))
+* added builtins from xonsh ([be798f6](https://github.com/jnoortheen/xonsh-vscode-ext/commit/be798f64b1c5bfaf7b97e49f1448edba9d2e0818)), closes [#10](https://github.com/jnoortheen/xonsh-vscode-ext/issues/10)
+
 ### [0.0.3](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.0.2...v0.0.3) (2020-10-11)
 
 
