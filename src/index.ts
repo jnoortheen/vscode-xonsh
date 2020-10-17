@@ -18,7 +18,7 @@ import { UriMessageItem } from './models';
 
 function getExePath(): string | undefined {
   const executable = workspace
-    .getConfiguration('xonsh')
+    .getConfiguration('pyls')
     .get<string>('executable');
   if (executable) {
     return which(executable);

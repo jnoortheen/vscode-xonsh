@@ -54,14 +54,17 @@
       "type": "object",
       "title": "Xonsh Language Server configuration",
       "properties": {
-        "xonsh.executable": {
+        "pyls.executable": {
           "type": "string",
           "default": "pyls",
           "description": "Language server executable"
         },
-        "xonsh.configurationSources": {
+        "pyls.configurationSources": {
           "type": "array",
-          "default": [],
+          "default": [
+            "pycodestyle",
+            "pyflakes"
+          ],
           "description": "List of configuration sources to use.",
           "items": {
             "type": "string",
@@ -72,97 +75,97 @@
           },
           "uniqueItems": true
         },
-        "xonsh.plugins.jedi.extra_paths": {
+        "pyls.plugins.jedi.extra_paths": {
           "type": "array",
           "default": [],
           "description": "Define extra paths for jedi.Script."
         },
-        "xonsh.plugins.jedi.env_vars": {
+        "pyls.plugins.jedi.env_vars": {
           "type": "dictionary",
           "default": null,
           "description": "Define environment variables for jedi.Script and Jedi.names."
         },
-        "xonsh.plugins.jedi.environment": {
+        "pyls.plugins.jedi.environment": {
           "type": "string",
           "default": null,
           "description": "Define environment for jedi.Script and Jedi.names."
         },
-        "xonsh.plugins.jedi_completion.enabled": {
+        "pyls.plugins.jedi_completion.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_completion.include_params": {
+        "pyls.plugins.jedi_completion.include_params": {
           "type": "boolean",
           "default": true,
           "description": "Auto-completes methods and classes with tabstops for each parameter."
         },
-        "xonsh.plugins.jedi_completion.include_class_objects": {
+        "pyls.plugins.jedi_completion.include_class_objects": {
           "type": "boolean",
           "default": true,
           "description": "Adds class objects as a separate completion item."
         },
-        "xonsh.plugins.jedi_completion.fuzzy": {
+        "pyls.plugins.jedi_completion.fuzzy": {
           "type": "boolean",
           "default": false,
           "description": "Enable fuzzy when requesting autocomplete."
         },
-        "xonsh.plugins.jedi_definition.enabled": {
+        "pyls.plugins.jedi_definition.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_definition.follow_imports": {
+        "pyls.plugins.jedi_definition.follow_imports": {
           "type": "boolean",
           "default": true,
           "description": "The goto call will follow imports."
         },
-        "xonsh.plugins.jedi_definition.follow_builtin_imports": {
+        "pyls.plugins.jedi_definition.follow_builtin_imports": {
           "type": "boolean",
           "default": true,
           "description": "If follow_imports is True will decide if it follow builtin imports."
         },
-        "xonsh.plugins.jedi_hover.enabled": {
+        "pyls.plugins.jedi_hover.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_references.enabled": {
+        "pyls.plugins.jedi_references.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_signature_help.enabled": {
+        "pyls.plugins.jedi_signature_help.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_symbols.enabled": {
+        "pyls.plugins.jedi_symbols.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.jedi_symbols.all_scopes": {
+        "pyls.plugins.jedi_symbols.all_scopes": {
           "type": "boolean",
           "default": true,
           "description": "If True lists the names of all scopes instead of only the module namespace."
         },
-        "xonsh.plugins.mccabe.enabled": {
+        "pyls.plugins.mccabe.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.mccabe.threshold": {
+        "pyls.plugins.mccabe.threshold": {
           "type": "number",
           "default": 15,
           "description": "The minimum threshold that triggers warnings about cyclomatic complexity."
         },
-        "xonsh.plugins.preload.enabled": {
+        "pyls.plugins.preload.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.preload.modules": {
+        "pyls.plugins.preload.modules": {
           "type": "array",
           "default": null,
           "items": {
@@ -171,12 +174,12 @@
           "uniqueItems": true,
           "description": "List of modules to import on startup"
         },
-        "xonsh.plugins.pycodestyle.enabled": {
+        "pyls.plugins.pycodestyle.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.pycodestyle.exclude": {
+        "pyls.plugins.pycodestyle.exclude": {
           "type": "array",
           "default": null,
           "items": {
@@ -185,7 +188,7 @@
           "uniqueItems": true,
           "description": "Exclude files or directories which match these patterns."
         },
-        "xonsh.plugins.pycodestyle.filename": {
+        "pyls.plugins.pycodestyle.filename": {
           "type": "array",
           "default": null,
           "items": {
@@ -194,7 +197,7 @@
           "uniqueItems": true,
           "description": "When parsing directories, only check filenames matching these patterns."
         },
-        "xonsh.plugins.pycodestyle.select": {
+        "pyls.plugins.pycodestyle.select": {
           "type": "array",
           "default": null,
           "items": {
@@ -203,7 +206,7 @@
           "uniqueItems": true,
           "description": "Select errors and warnings"
         },
-        "xonsh.plugins.pycodestyle.ignore": {
+        "pyls.plugins.pycodestyle.ignore": {
           "type": "array",
           "default": null,
           "items": {
@@ -212,22 +215,22 @@
           "uniqueItems": true,
           "description": "Ignore errors and warnings"
         },
-        "xonsh.plugins.pycodestyle.hangClosing": {
+        "pyls.plugins.pycodestyle.hangClosing": {
           "type": "boolean",
           "default": null,
           "description": "Hang closing bracket instead of matching indentation of opening bracket's line."
         },
-        "xonsh.plugins.pycodestyle.maxLineLength": {
+        "pyls.plugins.pycodestyle.maxLineLength": {
           "type": "number",
           "default": null,
           "description": "Set maximum allowed line length."
         },
-        "xonsh.plugins.pydocstyle.enabled": {
+        "pyls.plugins.pydocstyle.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.pydocstyle.convention": {
+        "pyls.plugins.pydocstyle.convention": {
           "type": "string",
           "default": null,
           "enum": [
@@ -236,7 +239,7 @@
           ],
           "description": "Choose the basic list of checked errors by specifying an existing convention."
         },
-        "xonsh.plugins.pydocstyle.addIgnore": {
+        "pyls.plugins.pydocstyle.addIgnore": {
           "type": "array",
           "default": null,
           "items": {
@@ -245,7 +248,7 @@
           "uniqueItems": true,
           "description": "Ignore errors and warnings in addition to the specified convention."
         },
-        "xonsh.plugins.pydocstyle.addSelect": {
+        "pyls.plugins.pydocstyle.addSelect": {
           "type": "array",
           "default": null,
           "items": {
@@ -254,7 +257,7 @@
           "uniqueItems": true,
           "description": "Select errors and warnings in addition to the specified convention."
         },
-        "xonsh.plugins.pydocstyle.ignore": {
+        "pyls.plugins.pydocstyle.ignore": {
           "type": "array",
           "default": null,
           "items": {
@@ -263,7 +266,7 @@
           "uniqueItems": true,
           "description": "Ignore errors and warnings"
         },
-        "xonsh.plugins.pydocstyle.select": {
+        "pyls.plugins.pydocstyle.select": {
           "type": "array",
           "default": null,
           "items": {
@@ -272,27 +275,27 @@
           "uniqueItems": true,
           "description": "Select errors and warnings"
         },
-        "xonsh.plugins.pydocstyle.match": {
+        "pyls.plugins.pydocstyle.match": {
           "type": "string",
           "default": "(?!test_).*\\.py",
           "description": "Check only files that exactly match the given regular expression; default is to match files that don't start with 'test_' but end with '.py'."
         },
-        "xonsh.plugins.pydocstyle.matchDir": {
+        "pyls.plugins.pydocstyle.matchDir": {
           "type": "string",
           "default": "[^\\.].*",
           "description": "Search only dirs that exactly match the given regular expression; default is to match dirs which do not begin with a dot."
         },
-        "xonsh.plugins.pyflakes.enabled": {
+        "pyls.plugins.pyflakes.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.pylint.enabled": {
+        "pyls.plugins.pylint.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.pylint.args": {
+        "pyls.plugins.pylint.args": {
           "type": "array",
           "default": null,
           "items": {
@@ -301,27 +304,27 @@
           "uniqueItems": false,
           "description": "Arguments to pass to pylint."
         },
-        "xonsh.plugins.pylint.executable": {
+        "pyls.plugins.pylint.executable": {
           "type": "string",
           "default": null,
           "description": "Executable to run pylint with. Enabling this will run pylint on unsaved files via stdin. Can slow down workflow. Only works with python3."
         },
-        "xonsh.plugins.rope_completion.enabled": {
+        "pyls.plugins.rope_completion.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.plugins.yapf.enabled": {
+        "pyls.plugins.yapf.enabled": {
           "type": "boolean",
           "default": false,
           "description": "Enable or disable the plugin."
         },
-        "xonsh.rope.extensionModules": {
+        "pyls.rope.extensionModules": {
           "type": "string",
           "default": null,
           "description": "Builtin and c-extension modules that are allowed to be imported and inspected by rope."
         },
-        "xonsh.rope.ropeFolder": {
+        "pyls.rope.ropeFolder": {
           "type": "array",
           "default": null,
           "items": {

@@ -22,7 +22,7 @@ export function activate(serverPath: string): Disposable {
     documentSelector: docSelector,
     synchronize: {
       fileEvents: workspace.createFileSystemWatcher('**/*.xonsh'),
-      configurationSection: 'xonsh',
+      configurationSection: 'pyls',
     },
     outputChannel: window.createOutputChannel('Xonsh'),
   };
