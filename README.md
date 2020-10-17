@@ -10,7 +10,7 @@ It trieds to modify the default VSCode's [Python extension](https://github.com/m
 
   + code snippets inside `markdown` files also work.
 
-* Language Server
+* Autocompletion with Language server protocol.
   + [pyls](https://github.com/palantir/python-language-server/) is used for jedi completion.
 
 ## Installation
