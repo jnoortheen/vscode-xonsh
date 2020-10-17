@@ -10,26 +10,23 @@ It trieds to modify the default VSCode's [Python extension](https://github.com/m
 
   + code snippets inside `markdown` files also work.
 
-## Todos
-
-**PRs welcome** for them
-
-* at this point it doesn't do anything special than `MagicPython` with `language-configuration.json`
-  + [ ] add subprocess mode lines support - https://macromates.com/manual/en/regular_expressions
-  + [ ] add $variable support
-  + [ ] add macros syntax support
-  + [ ] path string support
-  + [ ] the extra set of syntax - https://github.com/ninjaaron/xonsh-quickstart (I don't find a list of checklist anywhere else.)
-
-* auto-formatter support
-* code-completion support
-* snippets
+* Language Server
+  + [pyls](https://github.com/palantir/python-language-server/) is used for jedi completion.
 
 ## Installation
 
 ### Visual Studio Code
 
 Hit `F1` and enter the `ext install jnoortheen.xonsh` command or search for `xonsh` .
+
+### Python-language-server
+
+* Make sure that [ `pyls` ](https://github.com/palantir/python-language-server/) is installed and available on the `$PATH`
+* I recommend using [pipx](https://github.com/pipxproject/pipx/)
+
+``` sh
+pipx install 'python-language-server[all]'
+```
 
 ## Contributing
 
