@@ -1,7 +1,5 @@
 Adds [xonsh](https://xon.sh/) language support for VSCode Editor.
 
-It trieds to modify the default VSCode's [Python extension](https://github.com/microsoft/vscode/tree/master/extensions/python) to support xonsh as well.
-
 ## Features
 
 * Syntax Highlight
