@@ -2,7 +2,7 @@
   "name": "xonsh",
   "displayName": "Xonsh IDE",
   "description": "Xonsh language support.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "jnoortheen",
   "icon": "images/icon.png",
   "license": "MIT",
