@@ -24,3 +24,25 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
       - run: yarn lint
+
+  # publish the extension to marketplaces
+  publish:
+    # run after lint passes
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - name: Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v0
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v0
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
