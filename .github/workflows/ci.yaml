@@ -41,6 +41,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v0
