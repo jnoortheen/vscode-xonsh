@@ -12,6 +12,7 @@ on:
       - v*
 
 jobs:
+  # check it builds and the linter passes
   build:
     runs-on: ${{ matrix.os }}
 
@@ -39,6 +40,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
       - run: yarn lint
+      - run: yarn build
 
   # publish the extension to marketplaces
   publish:
