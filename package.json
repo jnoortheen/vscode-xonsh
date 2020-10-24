@@ -385,7 +385,7 @@
     "watch": "yarn build --watch",
     "watch:syntax": "watch 'yarn prebuild' ./src/tmlang",
     "postinstall": "node ./node_modules/vscode/bin/install && husky install",
-    "release": "yarn build && standard-version && git push --follow-tags && vsce publish",
+    "release": "yarn build && standard-version && git push --follow-tags",
     "lint": "eslint --ext ts src",
     "test:synt": "syntaxdev test --syntax src/tmlang/xonsh.syntax.yaml --tests",
     "test:syntax": "yarn test:synt tests/**/*.xsh"
