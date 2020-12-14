@@ -48,7 +48,7 @@ I have created this extension since there were none to support Xonsh. It is a su
 
 ---
 Special thanks to
- * The extension [sublime-cocnut](https://github.com/evhub/sublime-coconut) does support coconut language. Which is also a superset of Python.
+ * The extension [sublime-coconut](https://github.com/evhub/sublime-coconut) does support coconut language. Which is also a superset of Python.
 
 ## Links
 
