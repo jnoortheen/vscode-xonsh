@@ -28,8 +28,9 @@ pipx install 'python-language-server[all]'
 
 ## Contributing
 
-I have created this extension since there were none to support Xonsh. It is a superset of Python but has breaking syntax definition. So setting language mode as Python will list Syntax errors. This is just a start, adding basic syntax highlight. PRs are welcome. If we can add features from the Python extension it is great editor as well. Our aim is to make the `Python extension` support `xonsh` as well. It will happen only when it becomes popular enough.
+I have created this extension since there were none to support Xonsh. PRs are welcome to add new features/fixes. 
 
+Please make sure that you
 * Document the purpose of functions and classes.
 * When adding a new feature, please mention it in the `README.md` Features section. Use screenshots when applicable.
 * [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) style should be used for commit messages as it is used to generate changelog.
