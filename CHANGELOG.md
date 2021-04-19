@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.12...v0.1.13) (2021-04-19)
+
+
+### Features
+
+* upgrade dependencies to latest ([397185d](https://github.com/jnoortheen/xonsh-vscode-ext/commit/397185dc879fe907d61e0c9ca61d96b351d94a05))
+
 ### [0.1.12](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.11...v0.1.12) (2021-04-19)
 
 ### [0.1.11](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.10...v0.1.11) (2021-04-19)
