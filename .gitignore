@@ -134,3 +134,4 @@ paket-files/
 
 .idea/
 .local/
+*.vsix
