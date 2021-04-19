@@ -21,7 +21,12 @@ function getExePath(): string | undefined {
     .getConfiguration('pyls')
     .get<string>('executable');
   if (executable) {
-    return which(executable);
+    const isWindows = process.platform === 'win32';
+    return which(
+      isWindows && !executable.endsWith('.exe')
+        ? `${executable}.exe`
+        : executable
+    );
   }
 }
 async function checkServerInstalled(): Promise<string | undefined> {
