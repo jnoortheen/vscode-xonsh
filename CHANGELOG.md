@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.8...v0.1.9) (2021-04-19)
+
+
+### Bug Fixes
+
+* Workaround windows support for pyls ([7e9674c](https://github.com/jnoortheen/xonsh-vscode-ext/commit/7e9674ca9bd3eee74b218e7ad85e8375d8d240b4))
+
 ### [0.1.8](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.7...v0.1.8) (2020-10-24)
 
 ### [0.1.7](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.6...v0.1.7) (2020-10-24)
