@@ -395,6 +395,6 @@
     "test:syntax": "yarn test:synt tests/**/*.xsh"
   },
   "dependencies": {
-    "vscode-languageclient": "^6.1.3"
+    "vscode-languageclient": "^7.0.0"
   }
 }
