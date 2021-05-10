@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.13...v0.2.0) (2021-05-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* no longer compatible with pyls
+
+### Features
+
+* migrate from pyls to community for pylsp ([3c381a4](https://github.com/jnoortheen/xonsh-vscode-ext/commit/3c381a4926b10514d71033366cd3ef1fb855b04b))
+
 ### [0.1.13](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.1.12...v0.1.13) (2021-04-19)
 
 
