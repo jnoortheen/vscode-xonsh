@@ -10,7 +10,7 @@ let client: LanguageClient;
 export function activate(serverPath: string): Disposable {
   const serverOptions: ServerOptions = {
     command: serverPath,
-    args: ['-vv'],
+    args: ['-v'],
   };
 
   const docSelector: { scheme: string; language: string }[] = [
@@ -21,7 +21,10 @@ export function activate(serverPath: string): Disposable {
   const clientOptions: LanguageClientOptions = {
     documentSelector: docSelector,
     synchronize: {
-      fileEvents: workspace.createFileSystemWatcher('**/*.xonsh'),
+      fileEvents: [
+        workspace.createFileSystemWatcher('**/*.xsh'),
+        workspace.createFileSystemWatcher('**/*.xonsh'),
+      ],
       configurationSection: 'pylsp',
     },
     outputChannel: window.createOutputChannel('Xonsh'),
