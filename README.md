@@ -9,7 +9,7 @@ Adds [xonsh](https://xon.sh/) language support for VSCode Editor.
   + code snippets inside `markdown` files also work.
 
 * Autocompletion with Language server protocol.
-  + [pyls](https://github.com/palantir/python-language-server/) is used for jedi completion.
+  + [pylsp](https://github.com/python-lsp/python-lsp-server) is used for jedi completion.
 
 ## Installation
 
@@ -19,16 +19,18 @@ Hit `F1` and enter the `ext install jnoortheen.xonsh` command or search for `xon
 
 ### Python-language-server
 
-* Make sure that [ `pyls` ](https://github.com/palantir/python-language-server/) is installed and available on the `$PATH`
+* Make sure that [ `pylsp` ](https://github.com/python-lsp/python-lsp-server) is installed and available on the `$PATH`
 * I recommend using [pipx](https://github.com/pipxproject/pipx/)
 
 ``` sh
-pipx install 'python-language-server[all]'
+pipx install 'python-lsp-server[all]'
 ```
+
+* Previous versions of this extension used the [ older `pyls` ](https://github.com/palantir/python-language-server/) by Palantir. Further development is taking place in the community fork [pylsp](https://github.com/python-lsp/python-lsp-server). Due to the way configuration variables are handled, this extension is NOT backwards compatible with `pyls`. If you must use `pyls`, please downgrade to version 0.1.13.
 
 ## Contributing
 
-I have created this extension since there were none to support Xonsh. PRs are welcome to add new features/fixes. 
+I have created this extension since there were none to support Xonsh. PRs are welcome to add new features/fixes.
 
 Please make sure that you
 * Document the purpose of functions and classes.
