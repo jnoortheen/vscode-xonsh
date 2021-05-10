@@ -18,7 +18,7 @@ import { UriMessageItem } from './models';
 
 function getExePath(): string | undefined {
   const executable = workspace
-    .getConfiguration('pyls')
+    .getConfiguration('pylsp')
     .get<string>('executable');
   if (executable) {
     const isWindows = process.platform === 'win32';
@@ -36,7 +36,7 @@ async function checkServerInstalled(): Promise<string | undefined> {
       'Unable to find Python language server',
       {
         title: 'Install language server',
-        uri: Uri.parse('https://github.com/palantir/python-language-server'),
+        uri: Uri.parse('https://github.com/python-lsp/python-lsp-server'),
       }
     );
     if (selection?.uri !== undefined) {
