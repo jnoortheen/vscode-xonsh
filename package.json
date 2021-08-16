@@ -361,16 +361,16 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
-    "@types/node": "^15.0.2",
+    "@commitlint/cli": "^13.0",
+    "@commitlint/config-conventional": "^13.0",
+    "@types/node": "^16.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.14.2",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "js-yaml": "^4.1.0",
-    "ovsx": "^0.1.0-next.e000fdb",
+    "ovsx": "*",
     "prettier": "^2.0.0",
     "pretty-quick": "^3.1.0",
     "standard-version": "^9.1",
@@ -395,6 +395,6 @@
     "test:syntax": "yarn test:synt tests/**/*.xsh"
   },
   "dependencies": {
-    "vscode-languageclient": "^6.1.3"
+    "vscode-languageclient": "^7.0"
   }
 }
