@@ -5,7 +5,32 @@
 			"type": "npm",
 			"script": "watch",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": {
+				"severity": "error",
+				"applyTo": "closedDocuments",
+				"source": "esbuild",
+				"owner": "typescript",
+				"fileLocation": "relative",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": {
+						"regexp": "\\[watch\\] build started"
+					},
+					"endsPattern": {
+						"regexp": "\\[watch\\] build finished"
+					}
+				},
+				"pattern": [
+					{
+						"regexp": "> (.*?):([0-9]+):([0-9]+): (warning|error): (.+)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"message": 5
+					}
+				]
+			},
 			"label": "npm: watch",
 			"isBackground": true,
 			"detail": "yarn build --watch"
