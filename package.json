@@ -340,11 +340,11 @@
       {
         "language": "xonsh",
         "scopeName": "source.xonsh",
-        "path": "./dist/tmlang/xonsh.json"
+        "path": "./dist/tmlang/xonsh.xml"
       },
       {
         "scopeName": "markdown.xonsh.codeblock",
-        "path": "./dist/tmlang/injection.json",
+        "path": "./dist/tmlang/injection.xml",
         "injectTo": [
           "text.html.markdown"
         ],
@@ -370,7 +370,6 @@
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.0",
-    "js-yaml": "^4.1.0",
     "ovsx": "*",
     "prettier": "^2.0.0",
     "pretty-quick": "^3.1.0",
@@ -383,7 +382,9 @@
   },
   "scripts": {
     "fmt": "prettier --write src",
-    "prebuild": "syntaxdev build-cson --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.cson && cson2json dist/tmlang/xonsh.cson > dist/tmlang/xonsh.json && js-yaml src/tmlang/injection.yml > dist/tmlang/injection.json",
+    "build:syntax:xonsh": "syntaxdev build-plist --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.xml",
+    "build:syntax:inject": "syntaxdev build-plist --in src/tmlang/injection.yml --out dist/tmlang/injection.xml",
+    "prebuild": "yarn build:syntax:xonsh && yarn build:syntax:inject",
     "build-base": "esbuild ./src/index.ts --bundle --outfile=dist/index.js --external:vscode --format=cjs --platform=node",
     "build": "yarn run build-base -- --sourcemap --minify",
     "watch": "yarn run build-base -- --sourcemap --watch",
