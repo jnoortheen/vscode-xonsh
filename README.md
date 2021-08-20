@@ -22,7 +22,7 @@ Hit `F1` and enter the `ext install jnoortheen.xonsh` command or search for `xon
 * Make sure that [ `pylsp` ](https://github.com/python-lsp/python-lsp-server) is installed and available on the `$PATH`
 * I recommend using [pipx](https://github.com/pipxproject/pipx/)
 
-``` sh
+```sh
 pipx install 'python-lsp-server[all]'
 ```
 
@@ -41,13 +41,21 @@ Please make sure that you
 
 * TypeScript is used to develop the extension
 
-``` sh
+```sh
   yarn install
   yarn build # this will build the extension
 ```
 
 * check [Extension Quickstart](./vsc-extension-quickstart.md)
 * husky is used for git hooks
+
+## Release
+
+```sh
+yarn release
+```
+
+* Github CI is configured to publish the extensions to VSCode and OpenVSCode registries
 
 ---
 Special thanks to
