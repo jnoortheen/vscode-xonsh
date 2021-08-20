@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.2...v0.2.3) (2021-08-20)
+
+
+### Features
+
+* upgrade lsp client from 6.0 to 7.0 ([0e086ed](https://github.com/jnoortheen/xonsh-vscode-ext/commit/0e086ed76acb7b043bdaf20b548318b7722faea8))
+
+
+### Bug Fixes
+
+* bundle extension using esbuild ([232fce8](https://github.com/jnoortheen/xonsh-vscode-ext/commit/232fce87fc19913e94d002fc24f1230f50b2adb5))
+* linter errors regarding new ls-client types ([5ae93e6](https://github.com/jnoortheen/xonsh-vscode-ext/commit/5ae93e69f093545dd18f55904fca14031e4686b0))
+
 ### [0.2.2](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.1...v0.2.2) (2021-05-10)
 
 ### [0.2.1](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.0...v0.2.1) (2021-05-10)
