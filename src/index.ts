@@ -57,7 +57,8 @@ export async function activate(ctx: ExtensionContext): Promise<void> {
   languages.setLanguageConfiguration('xonsh', {
     onEnterRules: [
       {
-        beforeText: /^\s*(?:def|class|for|if|elif|else|while|try|with|finally|except|async).*?:\s*$/,
+        beforeText:
+          /^\s*(?:def|class|for|if|elif|else|while|try|with|finally|except|async).*?:\s*$/,
         action: { indentAction: IndentAction.Indent },
       },
     ],
