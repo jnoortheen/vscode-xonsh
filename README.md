@@ -8,7 +8,7 @@ Adds [xonsh](https://xon.sh/) language support for VSCode Editor.
 
   + code snippets inside `markdown` files also work.
 
-* Autocompletion with Language server protocol.
+* Other IDE like features using Language server protocol.
   + [pylsp](https://github.com/python-lsp/python-lsp-server) is used for jedi completion.
 
 ## Installation
