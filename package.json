@@ -363,7 +363,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.0",
     "@commitlint/config-conventional": "^13.0",
-    "@types/node": "^16.0",
+    "@types/node": "^16.7",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.14.2",
     "esbuild": "^0.12.21",
