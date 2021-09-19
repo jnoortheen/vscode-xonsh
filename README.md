@@ -1,4 +1,13 @@
+
+<p align="center">  
+If you like the template click ⭐ on the repo.
+</p>
+
+
+# Overview
+
 Adds [xonsh](https://xon.sh/) language support for VSCode Editor.
+
 
 ## Features
 
