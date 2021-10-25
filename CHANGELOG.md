@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.4...v0.2.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* syntax definitions missing ([3605700](https://github.com/jnoortheen/xonsh-vscode-ext/commit/3605700eab1a581d8220c6d3fd541f237bd7a19c))
+
 ### [0.2.4](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.3...v0.2.4) (2021-08-20)
 
 ### [0.2.3](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.2...v0.2.3) (2021-08-20)
