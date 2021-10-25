@@ -5,6 +5,7 @@
 # Whitelist what you need
 !.vscodeignore
 !dist/*
+!dist/tmlang/*
 !images/*
 !syntaxes/*
 !language-configuration.json
