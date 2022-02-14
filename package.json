@@ -361,7 +361,7 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.0",
+    "@commitlint/cli": "^16.2",
     "@commitlint/config-conventional": "^13.0",
     "@types/node": "^16.0",
     "@typescript-eslint/eslint-plugin": "*",
