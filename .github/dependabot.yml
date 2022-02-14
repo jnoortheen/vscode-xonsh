@@ -6,6 +6,6 @@ updates:
     directory: "/"
     # Check the npm registry for updates every week (weekdays)
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     # usually the PRs will be merged automatically for patch updates
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 5
