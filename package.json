@@ -367,7 +367,7 @@
     "@types/vscode": "^1.64.0",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
-    "esbuild": "^0.14.0",
+    "esbuild": "^0.14.29",
     "eslint": "*",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.0",
