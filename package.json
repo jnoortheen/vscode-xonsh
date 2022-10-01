@@ -364,7 +364,7 @@
     "@commitlint/cli": ">=16",
     "@commitlint/config-conventional": "*",
     "@types/node": "^17.0",
-    "@types/vscode": "^1.64.0",
+    "@types/vscode": "^1.71.0",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
     "esbuild": "^0.14.0",
