@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.6...v0.3.0) (2023-12-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to vscode-language-client v9.0
+
+* upgrade to vscode-language-client v9.0 ([5268b0a](https://github.com/jnoortheen/xonsh-vscode-ext/commit/5268b0ae3479e76699424f3479d9a7df29a62bd3))
+
 ### [0.2.6](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.4...v0.2.6) (2021-10-25)
 
 
