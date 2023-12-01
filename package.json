@@ -7,7 +7,7 @@
   "icon": "images/icon.png",
   "license": "MIT",
   "engines": {
-    "vscode": ">=1.64.0"
+    "vscode": ">=1.75.0"
   },
   "categories": [
     "Programming Languages",
@@ -28,9 +28,6 @@
     "url": "https://github.com/jnoortheen/xonsh-vscode-ext"
   },
   "main": "dist/index.js",
-  "activationEvents": [
-    "onLanguage:xonsh"
-  ],
   "contributes": {
     "languages": [
       {
@@ -363,20 +360,20 @@
   "devDependencies": {
     "@commitlint/cli": ">=16",
     "@commitlint/config-conventional": "*",
-    "@types/node": "^17.0",
+    "@types/node": "*",
     "@types/vscode": "^1.64.0",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
-    "esbuild": "^0.14.0",
+    "esbuild": "^0.14",
     "eslint": "*",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.0",
+    "husky": "^8.0.0",
     "ovsx": "*",
     "prettier": "^2.0.0",
     "pretty-quick": "^3.1.0",
     "standard-version": "^9.1",
     "syntaxdev": "^0.1.3",
-    "typescript": "^4.7.4",
+    "typescript": "*",
     "vsce": "^2",
     "vscode": "^1.1.25",
     "watch": "^1.0.2"
@@ -399,6 +396,6 @@
     "test:syntax": "yarn test:synt tests/**/*.xsh"
   },
   "dependencies": {
-    "vscode-languageclient": "^7.0"
+    "vscode-languageclient": "^9.0"
   }
 }

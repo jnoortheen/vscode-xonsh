@@ -135,3 +135,5 @@ paket-files/
 .idea/
 .local/
 *.vsix
+
+.DS_Store
