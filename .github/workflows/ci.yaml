@@ -7,9 +7,6 @@ on:
       - "v*"
   pull_request:
     branches: [main]
-  create:
-    tags:
-      - v*
 
 jobs:
   # check it builds and the linter passes
