@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.3.0...v0.3.1) (2023-12-01)
+
+
+### Bug Fixes
+
+* update package definition ([b762278](https://github.com/jnoortheen/xonsh-vscode-ext/commit/b7622781eb6b8099628d4a44646822313dd0c1af))
+
 ## [0.3.0](https://github.com/jnoortheen/xonsh-vscode-ext/compare/v0.2.6...v0.3.0) (2023-12-01)
 
 
