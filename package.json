@@ -28,6 +28,7 @@
     "url": "https://github.com/jnoortheen/xonsh-vscode-ext"
   },
   "main": "dist/index.js",
+  "activationEvents": [],
   "contributes": {
     "languages": [
       {
