@@ -4,7 +4,6 @@ import {
   LanguageClientOptions,
   ServerOptions,
 } from 'vscode-languageclient/node';
-import * as net from "net";
 
 let client: LanguageClient;
 
@@ -27,34 +26,21 @@ function getClientOptions(): LanguageClientOptions {
 
 }
 
-function startLangServerTCP(addr: number): LanguageClient {
-    const serverOptions: ServerOptions = () => {
-        return new Promise((resolve /*, reject */) => {
-            const clientSocket = new net.Socket();
-            clientSocket.connect(addr, "127.0.0.1", () => {
-                resolve({
-                    reader: clientSocket,
-                    writer: clientSocket,
-                });
-            });
-        });
-    };
+export async function activate(
+  ctx: ExtensionContext, executable: string
+): Promise<void> {
+  const serverOptions: ServerOptions = {
+    command: executable,
+    args: ['-v'],
+  };
 
-    return new LanguageClient(
-        `tcp lang server (port ${addr})`,
-        serverOptions,
-        getClientOptions()
-    );
-}
+  client = new LanguageClient(
+    'pylsp',
+    'xonsh Python Language Server',
+    serverOptions,
+    getClientOptions()
+  );
 
-export async function activate(ctx: ExtensionContext): Promise<void> {
-  // const serverOptions: ServerOptions = {
-  //   command: "",
-  //   args: ['-v'],
-  // };
-
-  // client = new LanguageClient('xonsh', 'Xonsh', serverOptions, clientOptions);
-  client = startLangServerTCP(2007)
   client.registerProposedFeatures();
   await client.start();
   ctx.subscriptions.push(client);
