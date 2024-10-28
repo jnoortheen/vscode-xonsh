@@ -7,5 +7,13 @@ updates:
     # Check the npm registry for updates every week (weekdays)
     schedule:
       interval: "monthly"
-    # usually the PRs will be merged automatically for patch updates
-    open-pull-requests-limit: 5
+    groups:
+      production-dependencies:
+        dependency-type: 'production'
+      development-dependencies:
+        dependency-type: 'development'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
