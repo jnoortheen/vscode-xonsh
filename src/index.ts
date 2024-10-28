@@ -51,7 +51,7 @@ export async function activate(ctx: ExtensionContext): Promise<void> {
   const executable = await checkServerInstalled();
 
   if (executable) {
-    await client.activate(ctx);
+    await client.activate(ctx, executable);
   }
 
   languages.setLanguageConfiguration('xonsh', {
