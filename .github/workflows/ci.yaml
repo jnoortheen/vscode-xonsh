@@ -2,7 +2,9 @@ name: VSCode CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - feature/xonsh-icon
     tags:
       - "v*"
   pull_request:
