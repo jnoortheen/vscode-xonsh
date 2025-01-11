@@ -364,14 +364,14 @@
     "@commitlint/config-conventional": "*",
     "@types/node": "*",
     "@types/vscode": "^1.64.0",
-    "esbuild": "^0.14",
-    "husky": "^8.0.0",
+    "esbuild": "^0.24",
+    "husky": "^9.1.7",
     "ovsx": "*",
     "standard-version": "^9.1",
     "syntaxdev": "^0.1.3",
     "typescript": "*",
     "@vscode/vsce": "*",
-    "watch": "^0.13.0"
+    "watch": "^1.0.2"
   },
   "scripts": {
     "build:syntax:xonsh": "syntaxdev build-plist --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.xml",
