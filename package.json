@@ -338,11 +338,11 @@
       {
         "language": "xonsh",
         "scopeName": "source.xonsh",
-        "path": "./dist/tmlang/xonsh.xml"
+        "path": "./dist/tmlang-xonsh.json"
       },
       {
         "scopeName": "markdown.xonsh.codeblock",
-        "path": "./dist/tmlang/injection.xml",
+        "path": "./dist/tmlang-injection.json",
         "injectTo": [
           "text.html.markdown"
         ],
@@ -368,20 +368,18 @@
     "husky": "^8.0.0",
     "ovsx": "*",
     "standard-version": "^9.1",
-    "syntaxdev": "^0.1.3",
     "typescript": "*",
     "@vscode/vsce": "*",
+    "js-yaml": "^3.4.2",
     "watch": "^0.13.0"
   },
   "scripts": {
-    "build:syntax:xonsh": "syntaxdev build-plist --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.xml",
-    "build:syntax:inject": "syntaxdev build-plist --in src/tmlang/injection.yml --out dist/tmlang/injection.xml",
-    "prebuild": "npm run build:syntax:xonsh && npm run build:syntax:inject",
+    "postbuild": "js-yaml src/tmlang/xonsh.syntax.yaml > dist/tmlang-xonsh.json && js-yaml src/tmlang/injection.yml > dist/tmlang-injection.json",
     "build-base": "esbuild ./src/index.ts --bundle --outfile=dist/index.js --external:vscode --format=cjs --platform=node",
     "build": "npm run build-base --sourcemap --minify",
     "watch": "npm run build-base --sourcemap --watch",
     "package": "vsce package",
-    "watch:syntax": "watch 'npm run prebuild' ./src/tmlang",
+    "watch:syntax": "watch 'npm run postbuild' ./src/tmlang",
     "postinstall": "husky install",
     "release": "npm run install && npm run lint && npm run build && standard-version && git push --follow-tags",
     "publish": "npm run package && vsce publish && ovsx publish --pat $OVS_PAT",
