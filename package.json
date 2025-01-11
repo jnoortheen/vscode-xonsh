@@ -376,18 +376,18 @@
   "scripts": {
     "build:syntax:xonsh": "syntaxdev build-plist --in src/tmlang/xonsh.syntax.yaml --out dist/tmlang/xonsh.xml",
     "build:syntax:inject": "syntaxdev build-plist --in src/tmlang/injection.yml --out dist/tmlang/injection.xml",
-    "prebuild": "yarn build:syntax:xonsh && yarn build:syntax:inject",
+    "prebuild": "npm run build:syntax:xonsh && npm run build:syntax:inject",
     "build-base": "esbuild ./src/index.ts --bundle --outfile=dist/index.js --external:vscode --format=cjs --platform=node",
-    "build": "yarn run build-base --sourcemap --minify",
-    "watch": "yarn run build-base --sourcemap --watch",
+    "build": "npm run build-base --sourcemap --minify",
+    "watch": "npm run build-base --sourcemap --watch",
     "package": "vsce package",
-    "watch:syntax": "watch 'yarn prebuild' ./src/tmlang",
+    "watch:syntax": "watch 'npm run prebuild' ./src/tmlang",
     "postinstall": "husky install",
-    "release": "yarn install && yarn lint && yarn build && standard-version && git push --follow-tags",
-    "publish": "yarn package && vsce publish && ovsx publish --pat $OVS_PAT",
+    "release": "npm run install && npm run lint && npm run build && standard-version && git push --follow-tags",
+    "publish": "npm run package && vsce publish && ovsx publish --pat $OVS_PAT",
     "lint": "biome check --write src",
     "test:synt": "syntaxdev test --syntax src/tmlang/xonsh.syntax.yaml --tests",
-    "test:syntax": "yarn test:synt tests/**/*.xsh"
+    "test:syntax": "npm run test:synt tests/**/*.xsh"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0"
