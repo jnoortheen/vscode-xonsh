@@ -359,19 +359,21 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": ">=19",
     "@biomejs/biome": "*",
+    "@commitlint/cli": ">=19",
     "@commitlint/config-conventional": "*",
     "@types/node": "*",
     "@types/vscode": "^1.64.0",
+    "@vscode/test-cli": "*",
+    "@vscode/test-electron": "*",
+    "@vscode/vsce": "*",
     "esbuild": "^0.24",
     "husky": "^9.1.7",
+    "js-yaml": "^3.4.2",
     "ovsx": "*",
     "standard-version": "^9.1",
     "typescript": "*",
-    "@vscode/vsce": "*",
-    "js-yaml": "^3.4.2",
-    "watch": "^1.0.2"
+    "watch": "^0.13.0"
   },
   "scripts": {
     "postbuild": "js-yaml src/tmlang/xonsh.syntax.yaml > dist/tmlang-xonsh.json && js-yaml src/tmlang/injection.yml > dist/tmlang-injection.json",
@@ -384,8 +386,8 @@
     "release": "npm run install && npm run lint && npm run build && standard-version && git push --follow-tags",
     "publish": "npm run package && vsce publish && ovsx publish --pat $OVS_PAT",
     "lint": "biome check --write src",
-    "test:synt": "syntaxdev test --syntax src/tmlang/xonsh.syntax.yaml --tests",
-    "test:syntax": "npm run test:synt tests/**/*.xsh"
+    "test:syntax": "syntaxdev test --syntax src/tmlang/xonsh.syntax.yaml --tests tests/**/*.xsh",
+    "test": "vscode-test"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0"
