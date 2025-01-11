@@ -136,4 +136,9 @@ paket-files/
 .local/
 *.vsix
 
+# Optional:
+#
+# OS generated files
 .DS_Store
+*.swp
+*.swo
