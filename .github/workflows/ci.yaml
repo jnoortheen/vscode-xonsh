@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        # Lock to the version shipped with VSCode 1.63+
         node-version: ['current']
 
     steps:
