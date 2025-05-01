@@ -363,7 +363,7 @@
     "@commitlint/cli": ">=19",
     "@commitlint/config-conventional": "*",
     "@types/node": "*",
-    "@types/vscode": "^1.97.0",
+    "@types/vscode": "^1.99.1",
     "@vscode/test-cli": "*",
     "@vscode/test-electron": "*",
     "@vscode/vsce": "*",
