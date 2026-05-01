@@ -45,7 +45,7 @@ jobs:
       - run: npm run build
       - run: npm run package
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: xonsh*.vsix
