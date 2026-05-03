@@ -1572,6 +1572,9 @@ repository:
         match: '&&|\|\||--|\+\+'
       - name: invalid.illegal.operator.python
         match: '[?]'
+      - name: invalid.illegal.operator.python
+        comment: We don't want `!` to flash when we're typing `!=`
+        match: '$!\b'
 
   illegal-object-name:
     comment: It's illegal to name class or function "True"
