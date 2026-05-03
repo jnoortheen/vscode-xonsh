@@ -1569,7 +1569,7 @@ repository:
   illegal-operator:
     patterns:
       - name: invalid.illegal.operator.python
-        match: '&&|\|\||--|\+\+'
+        match: '--|\+\+'
       - name: invalid.illegal.operator.python
         match: '[?]'
       - name: invalid.illegal.operator.python
