@@ -204,6 +204,83 @@ repository:
         guard: ""
 
 
+  xonsh-operator:
+    patterns:
+      - match: '(\$)([A-Za-z_][A-Za-z0-9_]*)\b'
+        captures:
+          '1': {name: keyword.operator.xonsh}
+          '2': {name: constant.other.caps.python}
+
+      - name: meta.scope.subshell.xonsh.captured.command
+        begin: '@\$\('
+        end: '\)'
+        beginCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        endCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        patterns:
+          - include: '#xonsh-operator'
+          - include: '#round-braces'
+          - include: '#list'
+          - include: '#curly-braces'
+
+      - name: meta.scope.subshell.xonsh.captured.output
+        begin: '\$\('
+        end: '\)'
+        beginCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        endCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        patterns:
+          - include: '#xonsh-operator'
+          - include: '#round-braces'
+          - include: '#list'
+          - include: '#curly-braces'
+
+      - name: meta.scope.subshell.xonsh.captured.object
+        begin: '!\('
+        end: '\)'
+        beginCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        endCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        patterns:
+          - include: '#xonsh-operator'
+          - include: '#round-braces'
+          - include: '#list'
+          - include: '#curly-braces'
+
+      - name: meta.scope.subshell.xonsh.uncaptured
+        begin: '[$!]\['
+        end: '\]'
+        beginCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        endCaptures:
+          '0': {name: constant.character
+                      punctuation.definition.subshell.single.shell}
+        patterns:
+          - include: '#xonsh-operator'
+          - include: '#round-braces'
+          - include: '#list'
+          - include: '#curly-braces'
+
+      - name: meta.xonsh.python-eval
+        begin: '@\('
+        end: '\)'
+        beginCaptures:
+          '0': {name: constant.character}
+        endCaptures:
+          '0': {name: constant.character}
+        patterns:
+          - include: '#expression'
+
   impossible:
     comment: This is a special rule that should be used where no match
              is desired. It is not a good idea to match something like
@@ -398,6 +475,7 @@ repository:
       - include: '#string'
       - include: '#lambda'
       - include: '#generator'
+      - include: '#xonsh-operator'
       - include: '#illegal-operator'
       - include: '#operator'
       - include: '#curly-braces'
@@ -1491,12 +1569,12 @@ repository:
   illegal-operator:
     patterns:
       - name: invalid.illegal.operator.python
-        match: '&&|\|\||--|\+\+'
+        match: '--|\+\+'
       - name: invalid.illegal.operator.python
-        match: '[?$]'
+        match: '[?]'
       - name: invalid.illegal.operator.python
         comment: We don't want `!` to flash when we're typing `!=`
-        match: '!\b'
+        match: '$!\b'
 
   illegal-object-name:
     comment: It's illegal to name class or function "True"

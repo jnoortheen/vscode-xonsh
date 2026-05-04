@@ -1,8 +1,6 @@
 
-<p align="center">  
-If you like the template click ⭐ on the repo.
-</p>
-
+> [!WARNING]
+> I no longer working on this extension actively. I only accept Pull requests that provide improvements to the functionality within the scope. I suggest to convert your custom `*.xsh` scripts to pure Python `*.py` modules which has more editor support. 
 
 # Overview
 
