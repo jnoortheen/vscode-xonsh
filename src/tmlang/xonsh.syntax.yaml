@@ -1559,13 +1559,6 @@ repository:
     name: constant.other.ellipsis.python
     match: \.\.\.
 
-  backticks:
-    name: invalid.deprecated.backtick.python
-    begin: \`
-    end: (?:\`|(?<!\\)(\n))
-    patterns:
-      - include: '#expression'
-
   illegal-operator:
     patterns:
       - name: invalid.illegal.operator.python
